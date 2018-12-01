@@ -166,7 +166,7 @@ If any of the required keys are missing, the api responds with client error. Exa
        destinations array.    
     2. Until we reach the destination, keep adding cards to output array     
 
-## Algorithm
+## Time Complexity 
 CardSortService 2 separate for loops - 
 1) To get the origin and destination
 2) To construct the path from origin to destination

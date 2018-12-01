@@ -36,10 +36,12 @@ This is a pure PHP api not using any framework.
     ```
  
 ## Invoke api
+The api to sort list of different boarding cards and create an itinerary takes a json input.
 Each boarding card has mandatory fields - 'from', 'to', 'type'
+Only http 'POST' method is allowed on the itinerary create endpoint.
 
-The api to sort list of different boarding cards and create an itinerary takes a json input and can be invoked as -
- 
+To invoke api through curl -
+
 ```      
 curl -X POST \
   http://localhost:8000/App/Modules/Itinerary/Create.php \
@@ -47,7 +49,7 @@ curl -X POST \
   -d '{
 	"cards": [
 		{
-			"from": "Stockholm",
+		"from": "Stockholm",
 	        "to": "New York JFK",
         	"type": "Flight",
         	"number": "SK22",
@@ -56,21 +58,21 @@ curl -X POST \
         	"isThrough": true
 		},
 		{
-			"from": "Madrid",
+		"from": "Madrid",
 	        "to": "Barcelona",
         	"type": "train",
         	"number": "7A",
         	"seat": "45B"
 		},
 		{
-			"from": "Gerona",
+		"from": "Gerona",
 	        "to": "Stockholm",
         	"type": "Flight",
         	"number": "SK22",
         	"gate": "45B"
 		},
 		{
-			"from": "Barcelona",
+		"from": "Barcelona",
 	        "to": "Gerona",
         	"type": "bus"
 		}

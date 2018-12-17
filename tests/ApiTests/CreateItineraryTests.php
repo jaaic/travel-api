@@ -171,6 +171,7 @@ class CreateItineraryTests extends TestCase
      * Test no 'cards' key in input pr empty body or empty cards value
      *
      * @return void
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testEmptyCardsInInput(): void
     {
@@ -218,6 +219,8 @@ class CreateItineraryTests extends TestCase
      * Test missing any of required card keys - to, from, type
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testCardsMissingRequiredParams(): void
     {
@@ -242,6 +245,8 @@ class CreateItineraryTests extends TestCase
      * Test broken path
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testBrokenPath(): void
     {
@@ -292,6 +297,8 @@ class CreateItineraryTests extends TestCase
      * Test loops in path of type A-B-C-D-C
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testLoopsInPath1(): void
     {
@@ -342,6 +349,8 @@ class CreateItineraryTests extends TestCase
      * Test loops in path of type A-B-C-D-B
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testLoopInPath2(): void
     {
@@ -392,6 +401,8 @@ class CreateItineraryTests extends TestCase
      * Test loops in path of type A-B-C-D-A
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ClientException
      */
     public function testRoundTripPath(): void
     {
@@ -442,6 +453,8 @@ class CreateItineraryTests extends TestCase
      * Test non implemented boarding card type
      *
      * @return void
+     *
+     * @expectedException \GuzzleHttp\Exception\ServerException
      */
     public function testUnknownBoardingCardType(): void
     {

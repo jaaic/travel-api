@@ -49,7 +49,7 @@ curl -X POST \
   -d '{
 	"cards": [
 		{
-		"from": "Stockholm",
+		    "from": "Stockholm",
 	        "to": "New York JFK",
         	"type": "Flight",
         	"number": "SK22",
@@ -58,24 +58,24 @@ curl -X POST \
         	"isThrough": true
 		},
 		{
-		"from": "Madrid",
+		    "from": "Madrid",
 	        "to": "Barcelona",
         	"type": "train",
         	"number": "7A",
         	"seat": "45B"
 		},
 		{
-		"from": "Gerona",
+		    "from": "Gerona",
 	        "to": "Stockholm",
         	"type": "Flight",
         	"number": "SK22",
         	"gate": "45B"
 		},
 		{
-		"from": "Barcelona",
+		    "from": "Barcelona",
 	        "to": "Gerona",
         	"type": "bus",
-		"subType": "airport"
+		    "subType": "airport"
 		}
     ],
     "output": "html"
@@ -170,7 +170,7 @@ If any of the required keys are missing, the api responds with client error. Exa
     2. Until we reach the destination, keep adding cards to output array     
 
 ## Time Complexity 
-CardSortService 2 separate for loops - 
+CardSortService has 2 separate for loops - 
 1) To get the origin and destination
 2) To construct the path from origin to destination
 

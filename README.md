@@ -74,7 +74,8 @@ curl -X POST \
 		{
 		"from": "Barcelona",
 	        "to": "Gerona",
-        	"type": "bus"
+        	"type": "bus",
+		"subType": "airport"
 		}
     ],
     "output": "html"
@@ -97,7 +98,7 @@ The HTML output of above input is -
 ```
 <ul>
 <li>Take train 7A from Madrid to Barcelona. Sit in seat 45B.</li>
-<li>Take the bus from Barcelona to Gerona . No seat assignment.</li>
+<li>Take the airport bus from Barcelona to Gerona airport. No seat assignment.</li>
 <li>From Gerona Airport, take flight SK22 to Stockholm. Gate 45B.</li>
 <li>From Stockholm Airport, take flight SK22 to New York JFK. Gate 22, Seat 7B. Baggage will be automatically transferred from your last leg.</li>
 <li>You have arrived at your final destination.</li>

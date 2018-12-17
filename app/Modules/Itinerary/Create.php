@@ -25,11 +25,19 @@ try {
     $request  = new CreateItineraryRequest($data);
     $response = $request->load()
                         ->process();
-} catch (BadRequestException | ServerException $exception) {
+    header("HTTP/1.1 200 OK");
+} catch (BadRequestException $exception) {
     $response = json_encode($exception->toArray());
+    header("HTTP/1.1 400");
+
+} catch (ServerException $exception) {
+    $response = json_encode($exception->toArray());
+    header("HTTP/1.1 500");
+
 } catch (Throwable $exception) {
     $response = [$exception->getMessage(), $exception->getTrace()];
     $response = json_encode($response);
+    header("HTTP/1.1 500");
 }
 
 echo $response;
